@@ -2,6 +2,13 @@ export function loadContent() {
     const content = document.querySelector("#content");
     const arrayOfSections = [createNavMenu(), createTitleSection(), createStorySection(), createReservationSection()];
 
+    //remove all child elements from a div
+    if (content) {
+        while (content.firstChild) {
+            content.removeChild(content.firstChild);
+        }
+    }
+
     arrayOfSections.forEach(divElement => {
         content.appendChild(divElement);
     });
@@ -9,7 +16,7 @@ export function loadContent() {
     console.log("LOAD SUCCESSFULL!");
 }
 
-function createNavMenu() {
+export function createNavMenu() {
     // create all elements
     const div = document.createElement("div");
     const logoImg = document.createElement("img");
@@ -24,19 +31,16 @@ function createNavMenu() {
     // create menu items
     menuItems.forEach( menuItem => {
         let li = document.createElement("li");
-        let a = document.createElement("a");
         
         li.classList.add("menu-item");
-
-        a.href = "#";
-        a.textContent = menuItem;
+        li.id = menuItem.toLowerCase();
+        li.textContent = menuItem;
 
         // when you get to this element, add this class for easier customization later in CSS
         if (menuItem === "Book a table") {
-            a.classList.add("book-btn");
+            li.classList.add("book-btn");
         }
 
-        li.appendChild(a);
         ul.appendChild(li);
     });
 
