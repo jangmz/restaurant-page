@@ -1,1 +1,3 @@
-console.log("this is a test");
+import {loadContent} from "./loadDOM.js";
+
+loadContent();
