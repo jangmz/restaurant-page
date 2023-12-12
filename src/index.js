@@ -1,6 +1,7 @@
 import { loadContent } from "./loadDOM.js";
 import { loadMenuPage } from "./menuPage.js";
 import { loadContactPage } from "./contactPage.js";
+import "./style.css";
 
 function loadListeners() {
     let menuItems = document.querySelectorAll(".menu-item");
