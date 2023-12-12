@@ -1,4 +1,4 @@
-import {createNavMenu} from "./loadDOM.js";
+import { createNavMenu } from "./loadDOM.js";
 
 export function loadMenuPage() {
     const contentDiv = document.querySelector("#content");
