@@ -130,20 +130,26 @@ function createFooter() {
     const div = document.createElement("div");
     const madeByText = document.createElement("p");
     const githubLogo = document.createElement("img");
+    const githubLogoLink = document.createElement("a");
     const gitLink = document.createElement("a");
+    const divLink = document.createElement("div");
 
-    // add necessary data
     div.id = "footer";
     madeByText.textContent = "Made by Jan Jankovič";
+    divLink.classList.add("footer-link");
     githubLogo.src = "./images/github.png";
+    githubLogoLink.href = "https://github.com/jangmz";
     gitLink.href = "https://github.com/jangmz";
-    gitLink.textContent = "Check my other work on GitHub.";
-    gitLink.appendChild(githubLogo);
+    gitLink.textContent = "Check my other work on GitHub -> ";
+    
+    githubLogoLink.appendChild(githubLogo);
+    divLink.appendChild(gitLink);
+    divLink.appendChild(githubLogoLink);
 
     div.appendChild(madeByText);
-    div.appendChild(gitLink);
+    div.appendChild(divLink);
 
     console.log("created footer");
-    // return the whole section
+    
     return div;
 }
