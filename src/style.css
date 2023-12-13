@@ -17,7 +17,7 @@ ul {
     background-color: rgba(0, 119, 167, 0.767);
     color: white;
     width: 100%;
-    padding: 20px;
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,4 +51,38 @@ ul {
 #title-section h6 {
     color: white;
     text-transform: uppercase;
+}
+
+#our-story-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(2, auto);
+    grid-column-gap: 50px;
+    grid-row-gap: 0;
+}
+
+#our-story-section h1 {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+
+    justify-self: center;
+}
+#our-story-section p {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+
+    padding-left: 50px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+#our-story-section img {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+    align-self: center;
 }

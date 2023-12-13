@@ -78,15 +78,18 @@ function createTitleSection() {
 
 function createStorySection() {
     const div = document.createElement("div");
+    const title = document.createElement("h1");
     const p = document.createElement("p");
     const img = document.createElement("img");
 
     div.id = "our-story-section";
     p.classList.add("text");
-    img.src = "#";
+    img.src = "./images/story.jpg";
 
     p.textContent = "Heaven of food is a one-of-a-kind dining experience that seamlessly combines delectable fusion cuisine with an intriguing underwater ambience. This cozy restaurant nestled in the Never Hungry Street is the newest of the Heaven of Food franchise with branches all over the world. Heaven of Food is the manifestation of our vision to offer you an indulgent escape in the midst of the hustle and bustle of the city. We're all about building a fraternity of like-minded patrons who appreciate a great meal in good company. This is made possible through the soul-soothing delicacies we offer in a setting inspired by the intrigues of the world under water. Take a plunge and explore the many surprises we have lined up just for you.";
+    title.textContent = "Our story";
 
+    div.appendChild(title);
     div.appendChild(p);
     div.appendChild(img);
 
