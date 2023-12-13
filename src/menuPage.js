@@ -1,4 +1,4 @@
-import { createNavMenu } from "./loadDOM.js";
+import { createNavMenu, createFooter } from "./loadDOM.js";
 
 export function loadMenuPage() {
     const contentDiv = document.querySelector("#content");
@@ -42,5 +42,6 @@ export function loadMenuPage() {
         div.appendChild(price);
 
         contentDiv.appendChild(div)
+        contentDiv.appendChild(createFooter());
     });
 }

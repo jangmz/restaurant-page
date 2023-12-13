@@ -1,6 +1,6 @@
 export function loadContent() {
     const content = document.querySelector("#content");
-    const arrayOfSections = [createNavMenu(), createTitleSection(), createStorySection(), createReservationSection()];
+    const arrayOfSections = [createNavMenu(), createTitleSection(), createStorySection(), createReservationSection(), createFooter()];
 
     //remove all child elements from a div
     if (content) {
@@ -13,7 +13,7 @@ export function loadContent() {
         content.appendChild(divElement);
     });
 
-    console.log("LOAD SUCCESSFULL!");
+    console.log("Load successful!");
 }
 
 export function createNavMenu() {
@@ -25,7 +25,7 @@ export function createNavMenu() {
 
     // add necessary data
     div.id = "navigation";
-    logoImg.src = "#";
+    logoImg.src = "./images/logo.png";
     ul.classList.add("menu");
 
     // create menu items
@@ -100,12 +100,14 @@ function createStorySection() {
 
 function createReservationSection() {
     const div = document.createElement("div");
+    const btnDiv = document.createElement("div");
     const h1 = document.createElement("h1");
     const h3 = document.createElement("h3");
     const emailBtn = document.createElement("button");
     const phoneBtn = document.createElement("button");
 
     div.id = "reservation-section";
+    btnDiv.classList.add("reservation-buttons");
     h1.classList.add("cta-title");
     h1.textContent = "Private dining";
     h3.classList.add("sub-title");
@@ -115,9 +117,33 @@ function createReservationSection() {
 
     div.appendChild(h1);
     div.appendChild(h3);
-    div.appendChild(emailBtn);
-    div.appendChild(phoneBtn);
+    btnDiv.appendChild(emailBtn);
+    btnDiv.appendChild(phoneBtn);
+    div.appendChild(btnDiv);
 
     console.log("created reservation section");
+    return div;
+}
+
+function createFooter() {
+    // create all elements
+    const div = document.createElement("div");
+    const madeByText = document.createElement("p");
+    const githubLogo = document.createElement("img");
+    const gitLink = document.createElement("a");
+
+    // add necessary data
+    div.id = "footer";
+    madeByText.textContent = "Made by Jan Jankovič";
+    githubLogo.src = "./images/github.png";
+    gitLink.href = "https://github.com/jangmz";
+    gitLink.textContent = "Check my other work on GitHub.";
+    gitLink.appendChild(githubLogo);
+
+    div.appendChild(madeByText);
+    div.appendChild(gitLink);
+
+    console.log("created footer");
+    // return the whole section
     return div;
 }

@@ -1,4 +1,4 @@
-import {createNavMenu} from "./loadDOM.js";
+import { createNavMenu, createFooter } from "./loadDOM.js";
 
 export function loadContactPage() {
     const contentDiv = document.querySelector("#content");
@@ -40,5 +40,6 @@ export function loadContactPage() {
         div.appendChild(img);
 
         contentDiv.appendChild(div);
+        contentDiv.appendChild(createFooter());
     })
 }

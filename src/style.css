@@ -14,7 +14,7 @@ ul {
 }
 
 #navigation {
-    background-color: rgba(0, 119, 167, 0.767);
+    background-color: rgb(82, 64, 19);
     color: white;
     width: 100%;
     padding-top: 20px;
@@ -26,7 +26,16 @@ ul {
 
 #navigation .menu {
     display: flex;
-    gap: 20px;
+    gap: 10px;
+}
+
+#navigation .menu li {
+    padding: 10px 20px;
+}
+
+#navigation .menu li:hover {
+    cursor: pointer;
+    text-shadow: 0 0 10px black;
 }
 
 #title-section {
@@ -85,4 +94,49 @@ ul {
     object-fit: cover;
 
     align-self: center;
+}
+
+#reservation-section {
+    height: 250px;
+    width: 100%;
+    padding: 20px 0px;
+
+    background: url("/dist/images/reservation.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: multiply;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#reservation-section h1,
+#reservation-section h3,
+#reservation-section button {
+    color: white;
+    text-transform: uppercase;
+}
+
+#reservation-section button {
+    padding: 15px 40px;
+    color: black;
+    background: goldenrod;
+    border: none;
+    border-radius: 7px;
+}
+
+#reservation-section .reservation-buttons {
+    padding: 20px;
+    font-weight: bold;
+
+    display: flex;
+    gap: 100px;
+}
+#reservation-section .reservation-buttons button:hover {
+    background: rgb(250, 196, 59);
+    box-shadow: 0px 0px 10px black;
+    cursor: pointer;
 }
