@@ -1,4 +1,4 @@
-import { loadContent } from "./loadDOM.js";
+import { loadContent, setActive } from "./loadDOM.js";
 import { loadMenuPage } from "./menuPage.js";
 import { loadContactPage } from "./contactPage.js";
 import "./style.css";
@@ -14,14 +14,17 @@ function menuEventHandler(event) {
     switch(event.target.id) {
         case "home":
             loadContent();
+            setActive(event.target.id);
             loadListeners();
             break;
         case "menu":
             loadMenuPage();
+            setActive(event.target.id);
             loadListeners();
             break;
         case "contact":
             loadContactPage();
+            setActive(event.target.id);
             loadListeners();
             break;
         default:
@@ -30,4 +33,5 @@ function menuEventHandler(event) {
 }
 
 loadContent();
+setActive("home");
 loadListeners();

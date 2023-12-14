@@ -21,7 +21,7 @@ export function createNavMenu() {
     const div = document.createElement("div");
     const logoImg = document.createElement("img");
     const ul = document.createElement("ul");
-    const menuItems = ["Home", "Menu", "Contact", "Book a table"];
+    const menuItems = ["Home", "Menu", "Contact"];
 
     // add necessary data
     div.id = "navigation";
@@ -36,11 +36,6 @@ export function createNavMenu() {
         li.id = menuItem.toLowerCase();
         li.textContent = menuItem;
 
-        // when you get to this element, add this class for easier customization later in CSS
-        if (menuItem === "Book a table") {
-            li.classList.add("book-btn");
-        }
-
         ul.appendChild(li);
     });
 
@@ -50,6 +45,24 @@ export function createNavMenu() {
     console.log("created navigation menu");
     // return the whole section
     return div;
+}
+
+export function setActive(pageId) {
+    // removes current "active" class from button
+    removeActive();
+
+    const button = document.querySelector(`#${pageId}`);
+    button.classList.add("active");
+}
+
+function removeActive() {
+    const menuItems = document.querySelectorAll(".menu-items");
+    
+    menuItems.forEach(menuItem => {
+        if (menuItem.classList.contains("active")) {
+            menuItem.classList.remove("active");
+        }
+    });
 }
 
 function createTitleSection() {
@@ -125,7 +138,7 @@ function createReservationSection() {
     return div;
 }
 
-function createFooter() {
+export function createFooter() {
     // create all elements
     const div = document.createElement("div");
     const madeByText = document.createElement("p");
@@ -153,3 +166,4 @@ function createFooter() {
     
     return div;
 }
+

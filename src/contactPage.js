@@ -40,6 +40,6 @@ export function loadContactPage() {
         div.appendChild(img);
 
         contentDiv.appendChild(div);
-        contentDiv.appendChild(createFooter());
-    })
+    });
+    contentDiv.appendChild(createFooter());
 }

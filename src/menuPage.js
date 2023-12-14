@@ -42,6 +42,6 @@ export function loadMenuPage() {
         div.appendChild(price);
 
         contentDiv.appendChild(div)
-        contentDiv.appendChild(createFooter());
     });
+    contentDiv.appendChild(createFooter());
 }
