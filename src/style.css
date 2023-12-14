@@ -176,3 +176,43 @@ ul {
     justify-content: center;
     align-items: center;
 }
+
+/* MENU PAGE */
+
+.food-items-section,
+.all-contacts-section {
+    width: 70%;
+    padding: 20px 0px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto-fill, minmax(1fr, 1fr));
+    gap: 20px;
+}
+
+.food-item,
+.contact-card {
+    border: 1px solid goldenrod;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-card {
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding: 0 40px;
+}
+
+.food-item .food-item-image {
+    width: 70%;
+    height: auto;
+}
+
+.contact-card-image img {
+    width: 150px;
+    height: auto;
+}
